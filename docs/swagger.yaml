@@ -1,0 +1,1214 @@
+basePath: /v1/api
+definitions:
+  admins.ListSignInParam:
+    properties:
+      admin:
+        properties:
+          name:
+            example: "18717711819"
+            type: string
+          password:
+            example: $2a$04$5Wu7npoNeok1xtCHXTLDk.XgNqGjZkzxhcsiOaNmBPIioxQ3LaqQS
+            type: string
+        type: object
+    required:
+    - name
+    - password
+    type: object
+  admins.ListSignUpParam:
+    properties:
+      admin:
+        properties:
+          name:
+            example: "18717711819"
+            type: string
+          password:
+            example: xxxxx
+            type: string
+          phone:
+            example: "18717711819"
+            type: string
+        type: object
+    required:
+    - name
+    - password
+    - phone
+    type: object
+  awards.ListAwardInfoParam:
+    properties:
+      info:
+        example: "2014"
+        type: string
+    required:
+    - info
+    type: object
+  awards.ListAwardParam:
+    properties:
+      returnMode:
+        example: all_list
+        type: string
+      search:
+        example: adidas Golden Boot Award
+        type: string
+    required:
+    - returnMode
+    - search
+    type: object
+  classic.ListClassicParam:
+    properties:
+      country:
+        example: Italy
+        type: string
+      modes:
+        example: all_list
+        type: string
+      search:
+        example: Italy
+        type: string
+      title:
+        example: "1954"
+        type: string
+    required:
+    - country
+    - modes
+    - search
+    - title
+    type: object
+  coaches.ListCoachParam:
+    properties:
+      country:
+        example: Japan
+        type: string
+      returnMode:
+        example: all_list
+        type: string
+      search:
+        type: string
+    required:
+    - country
+    - returnMode
+    - search
+    type: object
+  groups.ListGroupParam:
+    properties:
+      groupName:
+        example: Group A
+        type: string
+      returnMode:
+        example: all_list
+        type: string
+      teamName:
+        example: Russia
+        type: string
+    required:
+    - groupName
+    - returnMode
+    - teamName
+    type: object
+  model.AdminSerializer:
+    properties:
+      auth_token:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      encrypted_password:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      phone:
+        type: string
+      state:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.AwardSerializer:
+    properties:
+      award_name:
+        type: string
+      id:
+        type: integer
+      info:
+        type: string
+      url:
+        type: string
+    type: object
+  model.CoachSerializer:
+    properties:
+      country_name:
+        type: string
+      create_at:
+        type: string
+      delete_at:
+        type: string
+      id:
+        type: integer
+      image_url:
+        type: string
+      name:
+        type: string
+      update_at:
+        type: string
+    type: object
+  model.GroupSerializer:
+    properties:
+      create_at:
+        type: string
+      delete_at:
+        type: string
+      diff_goal:
+        type: integer
+      draw_number:
+        type: integer
+      goal_against:
+        type: integer
+      goal_number:
+        type: integer
+      group_name:
+        type: string
+      id:
+        type: integer
+      lost_number:
+        type: integer
+      match_played:
+        type: integer
+      points:
+        type: integer
+      team_name:
+        type: string
+      update_at:
+        type: string
+      win_number:
+        type: integer
+    type: object
+  model.MatchSerializer:
+    properties:
+      country_left:
+        type: string
+      country_right:
+        type: string
+      create_at:
+        type: string
+      date:
+        type: string
+      delete_at:
+        type: string
+      group_name:
+        type: string
+      id:
+        type: integer
+      location:
+        type: string
+      match_number:
+        type: integer
+      score:
+        type: string
+      update_at:
+        type: string
+    type: object
+  model.PlaySerializer:
+    properties:
+      country:
+        type: string
+      create_at:
+        type: string
+      delete_at:
+        type: string
+      id:
+        type: integer
+      image_address:
+        type: string
+      name:
+        type: string
+      number:
+        type: integer
+      role:
+        type: string
+      update_at:
+        type: string
+    type: object
+  model.PlayersStatisticWithDisciplinarySerializer:
+    properties:
+      created_at:
+        type: string
+      delete_at:
+        type: string
+      fouls_causing_penalty:
+        type: integer
+      fouls_committed:
+        type: integer
+      fouls_suffered:
+        type: integer
+      id:
+        type: integer
+      match_played:
+        type: integer
+      player_name:
+        type: string
+      rank:
+        type: integer
+      red_cards:
+        type: integer
+      second_yellow:
+        type: integer
+      update_at:
+        type: string
+      yellow_cards:
+        type: integer
+    type: object
+  model.PlayersStatisticWithGoalsScoredSerializer:
+    properties:
+      assists:
+        type: integer
+      created_at:
+        type: string
+      delete_at:
+        type: string
+      goals_scored:
+        type: integer
+      goals_scored_left:
+        type: integer
+      goals_scored_right:
+        type: integer
+      headed_goals:
+        type: integer
+      id:
+        type: integer
+      matches_played:
+        type: integer
+      minutes_played:
+        type: integer
+      penalties_scored:
+        type: integer
+      player_name:
+        type: string
+      rank:
+        type: integer
+      update_at:
+        type: string
+    type: object
+  model.PlayersStatisticWithShotSerializer:
+    properties:
+      attempts_off_target:
+        type: integer
+      attempts_on_target:
+        type: integer
+      created_at:
+        type: string
+      delete_at:
+        type: string
+      id:
+        type: integer
+      matches_played:
+        type: integer
+      minutes_played:
+        type: integer
+      player:
+        type: string
+      rank:
+        type: integer
+      shots:
+        type: integer
+      shots_blocked:
+        type: integer
+      update_at:
+        type: string
+    type: object
+  model.PlayersStatisticWithTopSaveSerializer:
+    properties:
+      created_at:
+        type: string
+      delete_at:
+        type: string
+      id:
+        type: integer
+      matched_played:
+        type: integer
+      minutes_played:
+        type: integer
+      player_name:
+        type: string
+      rank:
+        type: integer
+      save_rate:
+        type: string
+      saves:
+        type: integer
+      update_at:
+        type: string
+    type: object
+  model.TeamSerializer:
+    properties:
+      create_at:
+        type: string
+      delete_at:
+        type: string
+      flag:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      update_at:
+        type: string
+    type: object
+  model.TeamStatisticWithAttemptsSerializer:
+    properties:
+      attempts_off_target:
+        type: integer
+      attempts_on_target:
+        type: integer
+      created_at:
+        type: string
+      delete_at:
+        type: string
+      id:
+        type: integer
+      matches_payed:
+        type: integer
+      rank:
+        type: integer
+      shots_blocked_number:
+        type: integer
+      shots_number:
+        type: integer
+      team_name:
+        type: string
+      update_at:
+        type: string
+    type: object
+  model.TeamStatisticWithDisciplinarySerializer:
+    properties:
+      created_at:
+        type: string
+      delete_at:
+        type: string
+      fouls_causing_penalty:
+        type: integer
+      fouls_committed:
+        type: integer
+      fouls_suffered:
+        type: integer
+      id:
+        type: integer
+      match_played:
+        type: integer
+      rank:
+        type: integer
+      red_cards:
+        type: integer
+      second_yellow:
+        type: integer
+      team_name:
+        type: string
+      update_at:
+        type: string
+      yellow_cards:
+        type: integer
+    type: object
+  model.TeamStatisticWithTopGoalSerializer:
+    properties:
+      created_at:
+        type: string
+      delete_at:
+        type: string
+      goal_for:
+        type: integer
+      goals_against:
+        type: integer
+      goals_scored:
+        type: integer
+      id:
+        type: integer
+      int:
+        type: integer
+      match_played:
+        type: integer
+      open_play_goals:
+        type: integer
+      own_goals:
+        type: integer
+      penalty_goal:
+        type: integer
+      set_piece_goals:
+        type: integer
+      team_name:
+        type: string
+      update_at:
+        type: string
+    type: object
+  model.WorldCupArchiveSerializer:
+    properties:
+      create_at:
+        type: string
+      delete_at:
+        type: string
+      final_result:
+        type: string
+      fourth_name:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      runners_up:
+        type: string
+      third_name:
+        type: string
+      title:
+        type: string
+      update_at:
+        type: string
+      url:
+        type: string
+      winner:
+        type: string
+      year:
+        type: string
+    type: object
+  players.ListPlayerParam:
+    properties:
+      country:
+        example: Australia
+        type: string
+      name:
+        example: Aaron MOOY
+        type: string
+      number:
+        example: "13"
+        type: string
+      returnMode:
+        example: "true"
+        type: string
+      role:
+        example: Midfielder
+        type: string
+    required:
+    - country
+    - name
+    - number
+    - returnMode
+    - role
+    type: object
+  teams.ListTeamParam:
+    properties:
+      returnMode:
+        example: "true"
+        type: string
+      teamName:
+        example: Australia
+        type: string
+    required:
+    - returnMode
+    - teamName
+    type: object
+host: 127.0.0.1:5000
+info:
+  contact:
+    email: 18892207018@163.com
+    name: API Support
+  description: This is a server for WorldCup.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: WorldCup API
+  version: 1.6.7
+paths:
+  /admins/sign_in:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 登陆信息
+        in: body
+        name: admin
+        required: true
+        schema:
+          $ref: '#/definitions/admins.ListSignInParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.AdminSerializer'
+      security:
+      - Bearer: []
+      summary: 登陆
+      tags:
+      - Admin
+  /admins/sign_up:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 注册信息
+        in: body
+        name: admin
+        required: true
+        schema:
+          $ref: '#/definitions/admins.ListSignUpParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.AdminSerializer'
+      security:
+      - Bearer: []
+      summary: 注册
+      tags:
+      - Admin
+  /awards:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 根据奖项名称搜寻和显示模式
+        in: body
+        name: award
+        schema:
+          $ref: '#/definitions/awards.ListAwardParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.AwardSerializer'
+      security:
+      - Bearer: []
+      summary: 列出奖项
+      tags:
+      - Awards
+  /awards/info:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 根据奖项信息模糊搜寻
+        in: body
+        name: award
+        required: true
+        schema:
+          $ref: '#/definitions/awards.ListAwardInfoParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.AwardSerializer'
+      security:
+      - Bearer: []
+      summary: 根据奖项内容模糊查询
+      tags:
+      - Awards
+  /classic:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 片段搜索 模糊查询
+        in: body
+        name: classic
+        schema:
+          $ref: '#/definitions/classic.ListClassicParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.WorldCupArchiveSerializer'
+      security:
+      - Bearer: []
+      summary: 根据结果、国家等查询
+      tags:
+      - Classic
+  /classic/{year}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 根据年份搜索记录
+        in: path
+        name: year
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.WorldCupArchiveSerializer'
+      security:
+      - Bearer: []
+      summary: 根据年份查询
+      tags:
+      - Classic
+  /coaches:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 根据名称、国家搜寻和显示模式
+        in: body
+        name: coach
+        required: true
+        schema:
+          $ref: '#/definitions/coaches.ListCoachParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.CoachSerializer'
+            type: array
+      security:
+      - Bearer: []
+      summary: 根据奖项内容搜寻获奖记录
+      tags:
+      - Coaches
+  /coaches/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 根据id搜寻
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.CoachSerializer'
+      security:
+      - Bearer: []
+      summary: 根据奖项ID搜寻获奖记录
+      tags:
+      - Coaches
+  /groups:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 队名、组名查询队伍和显示模式
+        in: body
+        name: group
+        required: true
+        schema:
+          $ref: '#/definitions/groups.ListGroupParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.GroupSerializer'
+            type: array
+      security:
+      - Bearer: []
+      summary: 根据队名、组名查询队伍
+      tags:
+      - Groups
+  /groups/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: group id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.GroupSerializer'
+      security:
+      - Bearer: []
+      summary: 根据队伍ID查询队伍
+      tags:
+      - Groups
+  /matches:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 国家A
+        in: query
+        name: countryLeft
+        type: string
+      - description: 国家B
+        in: query
+        name: countryRight
+        type: string
+      - description: 全部列出(true/false)
+        in: query
+        name: return
+        type: string
+      - description: 比赛场数(int)
+        in: query
+        name: match_number
+        type: string
+      - description: 国家名称
+        in: query
+        name: country_name
+        type: string
+      - description: 队伍名称
+        in: query
+        name: group_name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.MatchSerializer'
+            type: array
+      security:
+      - Bearer: []
+      summary: 根据国家、队名等搜索比赛
+      tags:
+      - Match
+  /matches/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 比赛ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.MatchSerializer'
+      security:
+      - Bearer: []
+      summary: 根据ID搜索比赛
+      tags:
+      - Match
+  /players:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 球员姓名、国家、编号、角色搜索球员
+        in: body
+        name: group
+        schema:
+          $ref: '#/definitions/players.ListPlayerParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlaySerializer'
+      security:
+      - Bearer: []
+      summary: 根据球员姓名、国家、编号、角色搜索球员
+      tags:
+      - Players
+  /players/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlaySerializer'
+      security:
+      - Bearer: []
+      summary: 根据ID搜索队员
+      tags:
+      - Players
+  /statistics/players/disciplinary:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: player name
+        in: path
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlayersStatisticWithDisciplinarySerializer'
+      security:
+      - Bearer: []
+      summary: List Disciplinary
+      tags:
+      - Statistics
+  /statistics/players/disciplinary/{rank}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: rank number
+        in: path
+        name: rank
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlayersStatisticWithDisciplinarySerializer'
+      security:
+      - Bearer: []
+      summary: List Disciplinary
+      tags:
+      - Statistics
+  /statistics/players/goals:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: player name
+        in: path
+        name: name
+        type: string
+      - description: goals scored
+        in: path
+        name: goal
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.PlayersStatisticWithGoalsScoredSerializer'
+            type: array
+      security:
+      - Bearer: []
+      summary: List Goal
+      tags:
+      - Statistics
+  /statistics/players/goals/{rank}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: rank number
+        in: path
+        name: rank
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlayersStatisticWithGoalsScoredSerializer'
+      security:
+      - Bearer: []
+      summary: List Goal
+      tags:
+      - Statistics
+  /statistics/players/saves:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: name
+        in: path
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlayersStatisticWithTopSaveSerializer'
+      security:
+      - Bearer: []
+      summary: List Saves
+      tags:
+      - Statistics
+  /statistics/players/saves/{rank}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: rank number
+        in: path
+        name: rank
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlayersStatisticWithTopSaveSerializer'
+      security:
+      - Bearer: []
+      summary: List Saves
+      tags:
+      - Statistics
+  /statistics/players/shots:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: name
+        in: path
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlayersStatisticWithShotSerializer'
+      security:
+      - Bearer: []
+      summary: List Shot
+      tags:
+      - Statistics
+  /statistics/players/shots/{rank}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: rank number
+        in: path
+        name: rank
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PlayersStatisticWithShotSerializer'
+      security:
+      - Bearer: []
+      summary: List Shot
+      tags:
+      - Statistics
+  /statistics/teams/attempts:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: team name
+        in: path
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamStatisticWithAttemptsSerializer'
+      security:
+      - Bearer: []
+      summary: List Attempts
+      tags:
+      - Statistics
+  /statistics/teams/attempts/{rank}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: team name
+        in: path
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamStatisticWithAttemptsSerializer'
+      security:
+      - Bearer: []
+      summary: List Attempts
+      tags:
+      - Statistics
+  /statistics/teams/disciplinary:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: team name
+        in: path
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamStatisticWithDisciplinarySerializer'
+      security:
+      - Bearer: []
+      summary: List Disciplinary
+      tags:
+      - Statistics
+  /statistics/teams/disciplinary/{rank}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: rank number
+        in: path
+        name: rank
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamStatisticWithDisciplinarySerializer'
+      security:
+      - Bearer: []
+      summary: List Disciplinary
+      tags:
+      - Statistics
+  /statistics/teams/goals:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: team name
+        in: path
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamStatisticWithTopGoalSerializer'
+      security:
+      - Bearer: []
+      summary: List Goal
+      tags:
+      - Statistics
+  /statistics/teams/goals/{rank}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: rank number
+        in: path
+        name: rank
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamStatisticWithTopGoalSerializer'
+      security:
+      - Bearer: []
+      summary: List Goal
+      tags:
+      - Statistics
+  /teams:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 国家查询和显示模式
+        in: body
+        name: team
+        schema:
+          $ref: '#/definitions/teams.ListTeamParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamSerializer'
+      security:
+      - Bearer: []
+      summary: 根据国家等搜寻信息
+      tags:
+      - Teams
+  /teams/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: team id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TeamSerializer'
+      security:
+      - Bearer: []
+      summary: 根据球队ID搜索球队
+      tags:
+      - Teams
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
